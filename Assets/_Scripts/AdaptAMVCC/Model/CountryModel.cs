@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CountryModel : Model<GameplayApp>
 {
-    public Sprite flag;
-    public string Name;
+    public Sprite Flag;
+    public string CurrencyName;
     public float CurrencyMultiplier;
     public float CurMoney;
 }

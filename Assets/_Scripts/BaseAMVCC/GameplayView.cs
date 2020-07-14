@@ -6,4 +6,5 @@ using UnityEngine.UI;
 public class GameplayView : View<GameplayApp>
 {
     public TextView TextView;
+    public CountryPoolView CountryPoolView;
 }
