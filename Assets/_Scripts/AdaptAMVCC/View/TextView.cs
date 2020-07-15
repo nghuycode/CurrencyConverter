@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using NCalc;
+using System;
 
 public class TextView : View<GameplayApp>
 {
@@ -20,18 +21,22 @@ public class TextView : View<GameplayApp>
         CountryModel.CurrencyMultiplier = srcModel.CurrencyMultiplier;
         CountryModel.CurMoney = srcModel.CurMoney; 
 
-        Flag.image.sprite = CountryModel.Flag;
-        CurrencyName.text = CountryModel.CurrencyName;
+        UpdateTextView();
     }
     public void ConvertCurrency() {
-        if (this.gameObject.name == "TextViewTarget") {
+        if (this.gameObject.name == "TextViewTarget" && app.view.TextViewBase.TextHolder.text != "") {
             CountryModel Base = app.view.TextViewBase.CountryModel;
             CountryController.ConvertCurrency(Base.CurMoney, Base.CurrencyMultiplier);
+            CountryModel.CurMoney = (float)Math.Round(CountryModel.CurMoney, 2);
             TextHolder.text = CountryModel.CurMoney.ToString();
         }
     }
     public void OnFlagClick() {
         app.view.TextView = this;
+    }
+    public void UpdateTextView() {
+        Flag.image.sprite = CountryModel.Flag;
+        CurrencyName.text = CountryModel.CurrencyName;
     }
     #region  PROCESS THE KEY
     private void processKey(char key) {
