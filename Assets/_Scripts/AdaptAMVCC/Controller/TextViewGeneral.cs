@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeypadController : MonoBehaviour
+public class TextViewGeneral : MonoBehaviour
 {
     Animator anim;
-    private void Awake() {
+    void Start()
+    {
         anim = this.GetComponent<Animator>();
-    }
-    private void Start() {
         InputHandler.Instance.OnSwipeUp += SwipeUp;
         InputHandler.Instance.OnSwipeDown += SwipeDown;
     }
-    public void SwipeUp() {
-        anim.SetTrigger("KeypadUnhide");
+    void SwipeUp() {
+        anim.SetTrigger("TextViewUnhide");
     }
-    public void SwipeDown() {
-        anim.SetTrigger("KeypadHide");
+    void SwipeDown() {
+        anim.SetTrigger("TextViewHide");
     }
 }

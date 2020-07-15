@@ -9,7 +9,7 @@ public class TextView : View<GameplayApp>
     public CountryModel CountryModel;
     public CountryController CountryController;
     public InputField TextHolder;
-    public Image Flag;
+    public Button Flag;
     public Text CurrencyName;
     public void OnTextChanged(char key) {
         processKey(key);
@@ -20,7 +20,7 @@ public class TextView : View<GameplayApp>
         CountryModel.CurrencyMultiplier = srcModel.CurrencyMultiplier;
         CountryModel.CurMoney = srcModel.CurMoney; 
 
-        Flag.sprite = CountryModel.Flag;
+        Flag.image.sprite = CountryModel.Flag;
         CurrencyName.text = CountryModel.CurrencyName;
     }
     public void ConvertCurrency() {
@@ -33,22 +33,20 @@ public class TextView : View<GameplayApp>
     public void OnFlagClick() {
         app.view.TextView = this;
     }
-
     #region  PROCESS THE KEY
     private void processKey(char key) {
+        InputField TextHolderBase = app.view.TextViewBase.TextHolder; 
         switch(key) {
             case 'T':
-                if (TextHolder.text.Length > 0) {
-                    TextHolder.text = TextHolder.text.Remove(TextHolder.text.Length - 1, 1);
+                if (TextHolderBase.text.Length > 0) {
+                    TextHolderBase.text = TextHolderBase.text.Remove(TextHolderBase.text.Length - 1, 1);
                 }
                 break;
             case '=':
-                TextHolder.text = getAnswer(TextHolder.text);
-                CountryModel.CurMoney = int.Parse(TextHolder.text);
+                TextHolderBase.text = getAnswer(TextHolderBase.text);
                 break;
             default:
-                TextHolder.text += key;
-                CountryModel.CurMoney = int.Parse(TextHolder.text);
+                TextHolderBase.text += key;
                 break;
         }
     }
@@ -63,9 +61,19 @@ public class TextView : View<GameplayApp>
         return startCalculate(expression).ToString();
     }
     #endregion
-    #region MONO BEHAVIOUR 
+    #region MONO BEHAVIOUR
+    private void Start() {
+        
+    }
     private void Update() {
-        ConvertCurrency();
+        if (TextHolder.text != "" && this.gameObject.name == "TextViewBase" && isNumeric(TextHolder.text))
+            CountryModel.CurMoney = int.Parse(TextHolder.text);
+        if (CountryModel.CurrencyName != "")
+            ConvertCurrency();
+    }
+    bool isNumeric(string s) {
+        int num;
+        return int.TryParse(s, out num);
     }
     #endregion
 }
