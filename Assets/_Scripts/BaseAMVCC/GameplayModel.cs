@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class GameplayModel : Model<GameplayApp>
 {
-    public CountryModel CountryModel;
+    public CountryPoolModel CountryPoolModel;
 }

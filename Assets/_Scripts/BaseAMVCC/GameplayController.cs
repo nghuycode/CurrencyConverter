@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class GameplayController : Controller<GameplayApp>
 {
-
+    public CountryPoolController CountryPoolController;
 }
