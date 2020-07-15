@@ -7,15 +7,12 @@ public class CountryPoolController : Controller<GameplayApp>
 {
     Animator anim;
     public CountryController CountryL, CountryM, CountryR;
-
-    private void Awake() {
+    private void Start() {
+        anim = this.GetComponent<Animator>();
         InputHandler.Instance.OnSwipeUp += SwipeUp;
         InputHandler.Instance.OnSwipeDown += SwipeDown;
         InputHandler.Instance.OnSwipeLeft += SwipeLeft;
         InputHandler.Instance.OnSwipeRight += SwipeRight;
-    }
-    private void Start() {
-        anim = this.GetComponent<Animator>();
         UpdateCountryPool();
     }
     public void UpdateCountryPool() {
@@ -46,10 +43,5 @@ public class CountryPoolController : Controller<GameplayApp>
             countryPoolModel.CurrentCountryIndex++;
             UpdateCountryPool();
         }
-    }
-
-    private void Update() {
-        CountryL.ConvertCurrency(CountryM.GetCurMoney(), CountryM.GetCurrencyMultiplier());
-        CountryR.ConvertCurrency(CountryM.GetCurMoney(), CountryM.GetCurrencyMultiplier());
     }
 }

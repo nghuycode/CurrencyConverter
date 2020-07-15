@@ -10,6 +10,7 @@ public class InputHandler : MonoBehaviour
     public TouchState _state = TouchState.Drop;
 
     private Vector3 _startTouchPos;
+    [SerializeField]
     private float diffX, diffY;
     private float startFrame;
 
@@ -94,7 +95,7 @@ public class InputHandler : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             _state = TouchState.Drop;
-            if (Time.realtimeSinceStartup - startFrame < .3f)
+            if (Time.realtimeSinceStartup - startFrame < .5f)
                 Swipe();
         }
     }
