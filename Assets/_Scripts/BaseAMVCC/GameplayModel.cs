@@ -4,5 +4,27 @@ using UnityEngine;
 
 public class GameplayModel : Model<GameplayApp>
 {
+    private void Awake() {
+        ScreenOrientationDetect.Instance.OnLandscape += OnLandscape;
+        ScreenOrientationDetect.Instance.OnPortrait += OnPortrait;
+    }
+    public void OnPortrait() {
+        GameplayUI_Portrait.SetActive(true);
+        GameplayUI_Landscape.SetActive(false);
+        CountryPoolModel = CountryPoolModel_Portrait;
+    }
+    public void OnLandscape() {
+        GameplayUI_Portrait.SetActive(false);
+        GameplayUI_Landscape.SetActive(true);
+        CountryPoolModel = CountryPoolModel_Landscape;
+    }
     public CountryPoolModel CountryPoolModel;
+    #region Portrait
+    public GameObject GameplayUI_Portrait;
+    public CountryPoolModel CountryPoolModel_Portrait;
+    #endregion
+    #region Landscape
+    public GameObject GameplayUI_Landscape;
+    public CountryPoolModel CountryPoolModel_Landscape;
+    #endregion
 }
