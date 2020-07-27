@@ -35,8 +35,14 @@ public class TextView : View<GameplayApp>
         app.view.TextView = this;
     }
     public void UpdateTextView() {
+        Debug.Log("Update Text View");
         Flag.image.sprite = CountryModel.Flag;
         CurrencyName.text = CountryModel.CurrencyName;
+        TextHolder.text = CountryModel.CurMoney.ToString();
+    }
+    public void Copy(TextView src) {
+        CountryModel.Copy(src.CountryModel);
+        UpdateTextView();
     }
     #region  PROCESS THE KEY
     private void processKey(char key) {
@@ -56,7 +62,6 @@ public class TextView : View<GameplayApp>
         }
     }
     #endregion
-
     #region NCal plugins
     private object startCalculate(string expression) {
         Expression ex = new Expression(expression);
@@ -67,9 +72,6 @@ public class TextView : View<GameplayApp>
     }
     #endregion
     #region MONO BEHAVIOUR
-    private void Start() {
-        
-    }
     private void Update() {
         if (TextHolder.text != "" && this.gameObject.name == "TextViewBase" && isNumeric(TextHolder.text))
             CountryModel.CurMoney = int.Parse(TextHolder.text);

@@ -11,11 +11,15 @@ public class GameplayModel : Model<GameplayApp>
     public void OnPortrait() {
         GameplayUI_Portrait.SetActive(true);
         GameplayUI_Landscape.SetActive(false);
+        if (CountryPoolModel)
+            CountryPoolModel_Portrait.CurrentCountryIndex = CountryPoolModel.CurrentCountryIndex;
         CountryPoolModel = CountryPoolModel_Portrait;
     }
     public void OnLandscape() {
         GameplayUI_Portrait.SetActive(false);
         GameplayUI_Landscape.SetActive(true);
+        if (CountryPoolModel)
+            CountryPoolModel_Landscape.CurrentCountryIndex = CountryPoolModel.CurrentCountryIndex;
         CountryPoolModel = CountryPoolModel_Landscape;
     }
     public CountryPoolModel CountryPoolModel;
