@@ -12,24 +12,32 @@ public class GameplayView : View<GameplayApp>
     public void OnPortrait() {
         if (TextView)
         {
-            TextView_Portrait.CountryModel.Copy(TextView.CountryModel);
-            TextViewBase_Portrait.CountryModel.Copy(TextViewBase.CountryModel);
-            TextViewTarget_Portrait.CountryModel.Copy(TextViewTarget.CountryModel);
+            TextView_Portrait.Copy(TextView);
+            TextViewBase_Portrait.Copy(TextViewBase);
+            TextViewTarget_Portrait.Copy(TextViewTarget);
         }
         TextView = TextView_Portrait;
         TextViewBase = TextViewBase_Portrait;
         TextViewTarget = TextViewTarget_Portrait;
+
+        TextView.UpdateTextView();
+        TextViewBase.UpdateTextView();
+        TextViewTarget.UpdateTextView();
     }
     public void OnLandscape() {
         if (TextView) 
         {
-            TextView_Landscape.CountryModel.Copy(TextView.CountryModel);
-            TextViewBase_Landscape.CountryModel.Copy(TextViewBase.CountryModel);
-            TextViewTarget_Landscape.CountryModel.Copy(TextViewTarget.CountryModel);
+            TextView_Landscape.Copy(TextView);
+            TextViewBase_Landscape.Copy(TextViewBase);
+            TextViewTarget_Landscape.Copy(TextViewTarget);
         }
         TextView = TextView_Landscape;
         TextViewBase = TextViewBase_Landscape;
         TextViewTarget = TextViewTarget_Landscape;
+
+        TextView.UpdateTextView();
+        TextViewBase.UpdateTextView();
+        TextViewTarget.UpdateTextView();
     }
     public TextView TextView;
     public TextView TextViewBase, TextViewTarget;

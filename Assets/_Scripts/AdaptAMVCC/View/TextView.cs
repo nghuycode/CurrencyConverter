@@ -42,6 +42,9 @@ public class TextView : View<GameplayApp>
     }
     public void Copy(TextView src) {
         CountryModel.Copy(src.CountryModel);
+        Flag.image.sprite = src.Flag.image.sprite;
+        CurrencyName.text = src.CurrencyName.text;
+        TextHolder.text = src.TextHolder.text;
         UpdateTextView();
     }
     #region  PROCESS THE KEY

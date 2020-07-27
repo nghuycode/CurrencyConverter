@@ -4028,7 +4028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c04c4042d3458142896c3d667082655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Flag: {fileID: 0}
+  Flag: {fileID: -4292457467241267226, guid: 2676ff5c94fc9f1489d59bf570d079e3, type: 3}
   CurrencyName: 
   CurrencyFullName: 
   CurrencyMultiplier: 0
@@ -5814,7 +5814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c04c4042d3458142896c3d667082655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Flag: {fileID: 0}
+  Flag: {fileID: -4292457467241267226, guid: 2676ff5c94fc9f1489d59bf570d079e3, type: 3}
   CurrencyName: 
   CurrencyFullName: 
   CurrencyMultiplier: 0
@@ -6529,7 +6529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c04c4042d3458142896c3d667082655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Flag: {fileID: 0}
+  Flag: {fileID: -4292457467241267226, guid: 2676ff5c94fc9f1489d59bf570d079e3, type: 3}
   CurrencyName: 
   CurrencyFullName: 
   CurrencyMultiplier: 0
@@ -7780,7 +7780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c04c4042d3458142896c3d667082655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Flag: {fileID: 0}
+  Flag: {fileID: -4292457467241267226, guid: 2676ff5c94fc9f1489d59bf570d079e3, type: 3}
   CurrencyName: 
   CurrencyFullName: 
   CurrencyMultiplier: 0
