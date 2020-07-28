@@ -24,7 +24,7 @@ public class TextView : View<GameplayApp>
         UpdateTextView();
     }
     public void ConvertCurrency() {
-        if (this.gameObject.name == "TextViewTarget" && app.view.TextViewBase.TextHolder.text != "") {
+        if ((this.gameObject.name == "TextViewTarget" && app.view.TextViewBase.TextHolder.text != "") || (this.gameObject.CompareTag("Clone"))) {
             CountryModel Base = app.view.TextViewBase.CountryModel;
             CountryController.ConvertCurrency(Base.CurMoney, Base.CurrencyMultiplier);
             CountryModel.CurMoney = (float)Math.Round(CountryModel.CurMoney, 2);

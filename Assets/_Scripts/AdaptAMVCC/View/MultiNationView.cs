@@ -5,11 +5,17 @@ using UnityEngine;
 public class MultiNationView : View<GameplayApp>
 {
     public GameObject Content;
-    public GameObject prefabCountryDisplay;
+    public GameObject prefabCountryDisplay, BaseCountry;
     public GameObject TextViewBase;
+    public List<TextView> listTextView;
     [SerializeField]
     private Vector3 offsetBetweenCountries;
-    private List<TextView> listTextView;
+
+    public void SwitchToMulti() {
+        CountryModel src = app.view.TextViewBase.CountryModel;
+        TextViewBase.GetComponent<TextView>().CountryModel.Copy(src);
+        TextViewBase.GetComponent<TextView>().UpdateTextView();
+    }
     public void AddNewTextViewToContent(CountryModel src) {
         //Instantiate new TextView -> add to listTextView and set parent to content
         GameObject NewCountry = Instantiate(prefabCountryDisplay);
@@ -25,6 +31,7 @@ public class MultiNationView : View<GameplayApp>
         //Need to optimize
         for (int i = 0; i < listCountryModel.Count; ++i) {
             listTextView[i].CountryModel.Copy(listCountryModel[i]);
+            listTextView[i].ConvertCurrency();
             listTextView[i].UpdateTextView();
         }
     }
