@@ -21,4 +21,5 @@ public class GameplayController : Controller<GameplayApp>
     public CountryPoolController CountryPoolController_Landscape;
     #endregion
     public CountryPoolController CountryPoolController;
+    public MultiNationController MultiNationController;
 }

@@ -23,6 +23,7 @@ public class GameplayModel : Model<GameplayApp>
         CountryPoolModel = CountryPoolModel_Landscape;
     }
     public CountryPoolModel CountryPoolModel;
+    public MultiNationModel MultiNationModel;
     #region Portrait
     public GameObject GameplayUI_Portrait;
     public CountryPoolModel CountryPoolModel_Portrait;
