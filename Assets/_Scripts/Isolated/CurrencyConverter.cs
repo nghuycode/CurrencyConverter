@@ -10,6 +10,6 @@ public class CurrencyConverter : MonoBehaviour
     }
 
     public float ConvertCurrency(float curMoneyA, float multiNumA, float multiNumB) {
-        return curMoneyA * (multiNumA / multiNumB);
+        return curMoneyA * (multiNumB / multiNumA);
     }
 }

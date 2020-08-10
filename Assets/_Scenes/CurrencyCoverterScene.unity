@@ -1868,6 +1868,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304244903}
   m_CullTransparentMesh: 0
+--- !u!1 &305243724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 305243726}
+  - component: {fileID: 305243725}
+  m_Layer: 0
+  m_Name: FixerIOAPI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &305243725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305243724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0adad961d9d67e44bb2aba0b417af90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Countries: {fileID: 447809715}
+  Date: 
+--- !u!4 &305243726
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305243724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 616.22797, y: 1476.2845, z: -30.869102}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &314815851
 GameObject:
   m_ObjectHideFlags: 0
@@ -3104,7 +3149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Flag: {fileID: 21300000, guid: 044304fabd1695c48a53162a5a7e1a85, type: 3}
-  CurrencyName: YEN
+  CurrencyName: JPY
   CurrencyFullName: 
   CurrencyMultiplier: 215.98
   CurMoney: 0
@@ -7851,7 +7896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Flag: {fileID: 21300000, guid: 86459a5cd3de790408ab63b466924325, type: 3}
-  CurrencyName: EURO
+  CurrencyName: EUR
   CurrencyFullName: 
   CurrencyMultiplier: 26203.83
   CurMoney: 0
