@@ -27,7 +27,7 @@ public class History : MonoBehaviour
     {
         //Time
         DateTime now = DateTime.Now;
-        TimeDate.Add(DateTime.Now.ToString());
+        TimeDate.Add(DateTime.Now.ToString("dd/MM/yyyy   HH:mm"));
 
         //Get Base and Target currency name
         string baseName = app.view.TextViewBase.CountryModel.CurrencyName;
