@@ -19,8 +19,8 @@ public class TextView : View<GameplayApp>
         CountryModel.CurrencyName = srcModel.CurrencyName;
         CountryModel.Flag = srcModel.Flag;
         CountryModel.CurrencyMultiplier = srcModel.CurrencyMultiplier;
-        CountryModel.CurMoney = srcModel.CurMoney; 
-
+        CountryModel.CurMoney = srcModel.CurMoney;
+        Debug.Log(srcModel.gameObject.name);
         UpdateTextView();
     }
     public void ConvertCurrency() {

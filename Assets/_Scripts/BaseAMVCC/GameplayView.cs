@@ -42,6 +42,7 @@ public class GameplayView : View<GameplayApp>
     public TextView TextView;
     public TextView TextViewBase, TextViewTarget;
     public MultiNationView MultiNationView;
+    public HistoryView HistoryView;
     #region Portrait
     public TextView TextView_Portrait;
     public TextView TextViewBase_Portrait, TextViewTarget_Portrait;

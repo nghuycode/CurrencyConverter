@@ -13,6 +13,7 @@ public class CountryPoolController : Controller<GameplayApp>
         InputHandler.Instance.OnSwipeDown += SwipeDown;
         InputHandler.Instance.OnSwipeLeft += SwipeLeft;
         InputHandler.Instance.OnSwipeRight += SwipeRight;
+        FixerIOAPI.Instance.OnAPIUpdated += UpdateCountryPool;
         UpdateCountryPool();
     }
     public void UpdateCountryPool() {

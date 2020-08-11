@@ -9,7 +9,7 @@ public class CountryPoolModel : Model<GameplayApp>
     public int CurrentCountryIndex;
     
     private void OnEnable() {
-        for (int i = 0; i < Countries.transform.childCount; i++) 
+        for (int i = 0; i < Countries.transform.childCount; i++)
             CountriesModel.Add(Countries.transform.GetChild(i).GetComponent<CountryModel>());
     }
 }
